@@ -1,5 +1,7 @@
-import React from 'react'
+// import React from 'react'
 import styled from 'styled-components'
+import React, { useState } from 'react';
+import { Button, Modal } from 'antd';
 
 const Navbar = styled.nav`
     width: 100%;
@@ -8,7 +10,7 @@ const Navbar = styled.nav`
     align-items: center;
     `;
 
-    const NavMenu = styled.div`
+const NavMenu = styled.div`
     ul {
         display: flex;
         list-style: none;
@@ -28,34 +30,45 @@ const Navbar = styled.nav`
     }
     `
 
-    const NavIcon = styled.div`
+const NavIcon = styled.div`
     img {
         width: 120px;
         height: 80px;
     }
     `
 
-export default function Header() {
-
+export default function Header({onCategoryChange}) {
+  const [modal2Open, setModal2Open] = useState(false);
 
   return (
     <Navbar>
-    <NavIcon>
-        <img src="/nav_logo.png" alt="nav logo"/>
-    </NavIcon>
-    <NavMenu>
-      <ul>
-        <li>
-          <a id="button" data-category="people" href="#">Characters</a>
-        </li>
-        <li>
-          <a id="button" data-category="planets" href="#">Planets</a>
-        </li>
-        <li>
-          <a id="button" data-category="vehicles" href="#">Vehicles</a>
-        </li>
-      </ul>
-    </NavMenu>
-  </Navbar>
+        <NavIcon>
+            <img src="/nav_logo.png" alt="nav logo"/>
+        </NavIcon>
+        <NavMenu>
+        <ul>
+            <li>
+            <a onClick={() => onCategoryChange('people')} href="#">Characters</a>
+            </li>
+            <li>
+            <a onClick={() => onCategoryChange('planets')} href="#">Planets</a>
+            </li>
+            <li>
+            <a onClick={() => onCategoryChange('vehicles')} href="#">Vehicles</a>
+            </li>
+        </ul>
+        </NavMenu>
+              <Modal
+                title="Vertically centered modal dialog"
+                centered
+                open={modal2Open}
+                onOk={() => setModal2Open(false)}
+                onCancel={() => setModal2Open(false)}
+              >
+                <p>some contents...</p>
+                <p>some contents...</p>
+                <p>some contents...</p>
+              </Modal>
+    </Navbar>
   )
 }
