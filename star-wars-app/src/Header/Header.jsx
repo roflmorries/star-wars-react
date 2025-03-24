@@ -37,7 +37,7 @@ const NavIcon = styled.div`
     }
     `
 
-export default function Header({onCategoryChange}) {
+export default function Header({ onCategoryChange }) {
   const [modal2Open, setModal2Open] = useState(false);
 
   return (
