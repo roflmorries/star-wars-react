@@ -38,6 +38,9 @@ const ContentList = styled.div`
         color: white;
         font-family: "Orbitron", serif;
         font-size: 0.9rem;
+        &:hover {
+          color: #ffe81f;
+        }
       }
     }
     .load-more__button {

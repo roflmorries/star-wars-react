@@ -2,6 +2,7 @@
 import styled from 'styled-components'
 import React, { useState } from 'react';
 import { Modal } from 'antd';
+import NavLogo from '/nav_logo.png'
 
 const Navbar = styled.nav`
     width: 100%;
@@ -43,7 +44,7 @@ export default function Header({ onCategoryChange }) {
   return (
     <Navbar>
         <NavIcon href='index.html'>
-            <img src="/nav_logo.png" alt="nav logo"/>
+            <img src={NavLogo} alt="nav logo"/>
         </NavIcon>
         <NavMenu>
         <ul>
