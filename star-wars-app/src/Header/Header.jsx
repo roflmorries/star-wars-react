@@ -48,7 +48,9 @@ export default function Header({ onCategoryChange }) {
         <NavMenu>
         <ul>
             <li>
-            <a onClick={() => onCategoryChange('people')} href="#">Characters</a>
+            <a onClick={() => {
+                onCategoryChange('people')
+            }} href="#">Characters</a>
             </li>
             <li>
             <a onClick={() => onCategoryChange('planets')} href="#">Planets</a>

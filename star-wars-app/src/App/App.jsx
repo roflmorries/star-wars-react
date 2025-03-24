@@ -57,12 +57,14 @@ function App() {
       <Header onCategoryChange={handleCategoryChange}></Header>
     </Content>
     
+ 
     {details ? (
       <DetailsList details={details} onBack={() => setDetails(null)}></DetailsList>
     )
     : (
       <DataList data={data} category={category} url={url} onItemClick={handleDetails} onLoadMore={handleLoadMore}></DataList>
     )}
+    
     </>
   )
 }
