@@ -2,6 +2,7 @@ import './App.css'
 import Header from '../Header/Header'
 import DataList from '../DataList/DataList'
 import styled from 'styled-components'
+import DetailsList from '../DetailsList/DetailsList'
 import { useEffect, useState } from 'react'
 
 const Content = styled.div`
@@ -55,8 +56,13 @@ function App() {
     <Content>
       <Header onCategoryChange={handleCategoryChange}></Header>
     </Content>
-
-    <DataList data={data} category={category} url={url} onItemClick={handleDetails} onLoadMore={handleLoadMore}></DataList>/
+    
+    {details ? (
+      <DetailsList details={details} onBack={() => setDetails(null)}></DetailsList>
+    )
+    : (
+      <DataList data={data} category={category} url={url} onItemClick={handleDetails} onLoadMore={handleLoadMore}></DataList>
+    )}
     </>
   )
 }
