@@ -20,7 +20,7 @@ export default function DataList({data, category, onItemClick, onLoadMore, url})
     <div>
         {data.map((item, index) => (
             <div key={index} onClick={() => onItemClick(item.url)}>
-                <p>{itemsList(item)}</p>
+                <a href='#'>{itemsList(item)}</a>
             </div>
         ))}
         {url && <button onClick={onLoadMore}>Load More</button>}

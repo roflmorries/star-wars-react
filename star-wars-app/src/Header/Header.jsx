@@ -30,7 +30,7 @@ const NavMenu = styled.div`
     }
     `
 
-const NavIcon = styled.div`
+const NavIcon = styled.a`
     img {
         width: 120px;
         height: 80px;
@@ -42,7 +42,7 @@ export default function Header({ onCategoryChange }) {
 
   return (
     <Navbar>
-        <NavIcon>
+        <NavIcon href='index.html'>
             <img src="/nav_logo.png" alt="nav logo"/>
         </NavIcon>
         <NavMenu>
