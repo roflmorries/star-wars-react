@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Button, Modal } from 'antd';
+import React from 'react'
+
 
 
 export default function DataList({data, category, onItemClick, onLoadMore, url}) {
@@ -17,13 +17,13 @@ export default function DataList({data, category, onItemClick, onLoadMore, url})
     };
     console.log(data);
   return (
-    <div>
+    <div className='data-list__container'>
         {data.map((item, index) => (
             <div key={index} onClick={() => onItemClick(item.url)}>
                 <a href='#'>{itemsList(item)}</a>
             </div>
         ))}
-        {url && <button onClick={onLoadMore}>Load More</button>}
+        {url && <button className='load-more__button' onClick={onLoadMore}>Load More</button>}
     </div>
   )
 }
